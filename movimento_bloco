@@ -1,0 +1,25 @@
+;Movimento de bloco de n posições: faça um programa para mover um número qualquer de posições consecutivas da memória (sem zerar a origem). 
+;posição 128: número de posições
+;posição 129: posição inicial da origem
+;posição 130: posição inicial do destino 
+;ENDEREÇO 128 = 10
+;ENDEREÇO 129 = 200
+;ENDEREÇO 130 = 220
+
+
+CONTINUA:
+LDR A 129,I
+STR A 130,I
+LDR A 129
+ADD A #1
+STR A 129
+LDR A 130
+ADD A #1
+STR A 130
+LDR B 128
+SUB B #1
+STR B 128
+JZ FIM
+JMP CONTINUA
+
+FIM:HLT
