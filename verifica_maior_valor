@@ -1,0 +1,24 @@
+;programa que encontra o maior valor em uma lista com 10 números
+
+
+LDR X 129
+LDR A 130,X
+STR A 127
+
+RETORNA:
+SUB X #9
+JZ FIM
+LDR X 129
+ADD X 128
+STR X 129
+LDR A 127
+SUB A 130,X
+JN MAIOR
+JMP RETORNA
+
+MAIOR:
+LDR A 130,X
+STR A 127
+JMP RETORNA
+
+FIM: HLT
